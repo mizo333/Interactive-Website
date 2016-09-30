@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>☢☠ Brain Test ☠☢</title>
+<link rel="stylesheet" href="default_ns.css">
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+
+</head>
+  <script>
+    var clicks = 0; 
+    var firstchoice; 
+    var secondchoice; 
+
+    var match = 0; 
+    var backcard = "guess.gif"; 
+
+    var faces = []; 
+    faces[0] = 'cat.jpg';
+    faces[1] = 'owl.jpg';
+    faces[2] = 'dogs.gif';
+    faces[3] = 'dogs.gif';
+    faces[4] = 'cat.jpg';
+    faces[5] = 'owl.jpg';
+
+    function choose(card) {
+            if (clicks == 2) {
+                return;
+            }
+            if (clicks == 0) {
+                firstchoice = card;
+                document.images[card].src = faces[card];
+                clicks = 1;
+            } else {
+                clicks = 2;
+                secondchoice = card;
+                document.images[card].src = faces[card];
+                timer = setInterval("check()", 1000);
+            }
+        }
+        
+
+    function check() {
+    clearInterval(timer); //stop timer
+    clicks = 0;
+    if (faces[secondchoice] == faces[firstchoice]) {
+        match++;
+        document.getElementById("matches").innerHTML = match;
+    } else {
+        document.images[firstchoice].src = backcard;
+        document.images[secondchoice].src = backcard;
+        return;
+    }
+}
+</script>
+
+
+  <body>
+ <div id="match">
+<a href="javascript:choose(0)"><img src="guess.gif" width=200px height=200px /></a>
+
+     <a href="javascript:choose(1)"><img src="guess.gif" width=200px height=200px /></a>
+
+     <a href="javascript:choose(2)"><img src="guess.gif" width=200px height=200px /></a>
+
+     <br>
+
+     <a href="javascript:choose(3)"><img src="guess.gif" width=200px height=200px/></a>
+
+    <a href="javascript:choose(4)"><img src="guess.gif" width=200px height=200px /></a>
+
+    <a href="javascript:choose(5)"><img src="guess.gif" width=200px height=200px /></a>
+
+    <br>
+
+    <b style="font-size:40px; color: #F0E68C;"> MATCHES :</b>
+    <b style="font-size:60px; color:#F0E68C;" id="matches"> 0 </b>
+ </div>
+<div id="date"> <p></p>
+
+<button onclick="getElementById('demo3').innerHTML=Date()">Click To Reveal The Time</button>
+
+<p id="demo3"></p> </div>
+	<div id="header3">
+		<h2> <ol>
+  <li><a href="firstpage.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="website.html">1st</a></li>
+  <li><a href="second.html">2nd</a></li>
+  <li><a href="third.html">3rd</a></li>
+  <li><a href="fourth.html">4th</a></li>
+  <li><a href="fifth.html">5th</a></li>
+  <li><a href="sixth.html">6th</a></li>
+  <li><a href="seventh.html">7th</a></li>
+  <li><a href="eighth.html">8th</a></li>
+  <li><a href="ninth.html">9th</a></li>
+  <li><a href="tenth.html">Results</a></li>
+  </ol></h2>
+	</div>
+
+	<div id="content">
+		<p> <b> TEST &nbsp; </b><p>
+	</div>
+	
+	<div id="content1">
+		<p>  <b>&nbsp; YOUR </b><p>
+	</div> 
+	<div id="content4">
+		<p>  <b> MEMORY !! </b><p>
+	</div> 
+	
+	<div id="line"> </div>
+
+
+ 
+ <div id="MEMORY">
+ <h3><b><u> Match The Cards </u></b> </h3>
+ 
+ 
+ 
+ </div>
+ 
+ <div id="next2">
+ <form method="get" action="fourth.html">
+  
+  <input type="image" src="next.PNG" alt="Submit">
+</form>
+ <p> </p>
+ <br/> <br/>
+</div>
+
+
+<div id="previous2">
+<br/> <br/>
+ <form method="get" action="second.html">
+  
+  <input type="image" src="previous.PNG" alt="Submit">
+</form>
+ <p> </p>
+ 
+</div>
+</body>
+</html>
+
